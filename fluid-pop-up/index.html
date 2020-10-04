@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Image Gallery</title>
+</head>
+<body>
+
+
+<div class="gallery">
+    <div class="img-container">
+        <img src="./previews/pexels-victor-cayke-4706670.jpg"
+        alt="victor-cayke"
+        data-original="pexels-victor-cayke-4706670.jpg">
+    </div>
+    <div class="img-container">
+      <a href="https://www.youtube.com/">  <img src="./previews/pexels-luis-quintero-1485188.jpg"
+        alt="uis-quintero"
+        data original="pexels-luis-quintero-1485188.jpg"></a>
+    </div>
+    <div class="img-container">
+        <img src="./previews/pexels-ivan-oboleninov-2853909.jpg"
+        alt="ivan-oboleninov"
+        data-original="pexels-ivan-oboleninov-2853909.jpg">
+    </div>
+    <div class="img-container">
+        <img src="./previews/pexels-allan-franca-carmo-3133688.jpg"
+        alt="allan-franca-carmo"
+        data-original="pexels-allan-franca-carmo-3133688.jpg">
+    </div>
+</div>
+
+<div class="modal">
+    <img src="" alt="" class="full-img">
+    <p class="caption">bjhjknb</p>
+</div>
+
+
+
+<script>
+const modal = document.querySelector("modal");
+const previews = document.querySelectorAll("gallery img")
+const original = document.querySelector(".full-img");
+const mimgYexy = document.querySelector(".caption");
+
+previews.forEach((preview) => {
+    preview.addEventListener('click', () => {
+      modal.classList.add("model.open");
+      original.classList("model.open")
+      //Dynamic change text and image
+      const originalSrc = preview.getAttribute("data-original");
+      original.src = './full/${originalSrc}'
+    })
+})
+
+
+
+modal.addEventListener('click', (e) => {
+    if(e.target.classList.contains("modal")){
+        modal.classList.remove("model.open")
+        original.classList.remove("model.open")
+    }
+})
+</script>
+
+</body>
+</html>
